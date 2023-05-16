@@ -8,10 +8,10 @@ $consultas = new Consultas();
 //strpos($variable,'busqueda de ciertos caracteres'); == devuelve la posicion de la busquedao o false si no encuentnra nada
 
 
-if(isset($_POST['email']) && isset($_POST['password'])){
-    $email = $_POST['email'];
+if(isset($_POST['usuario']) && isset($_POST['password'])){
+    $usuario = $_POST['usuario'];
     //$password =  $_POST['password'];
-    $validar = $consultas->validar($email);   
+    $validar = $consultas->validar($usuario);   
     //echo $validar['contrasena'];
     //echo $validar['email'];
     if($validar && password_verify($_POST['password'], $validar['contrasena'])){

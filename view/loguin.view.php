@@ -3,9 +3,9 @@
 
     <h1>asistencia</h1>
 
-    <form action = "loguin.controller.php">
+    <form action = "loguin.controller.php" method = "post">
         <div>
-           <span>usuario<input type="email"></span>
+           <span>usuario<input type="usuario"></span>
         </div>
         <div>
             <span>contrasena<input type="password"></span>

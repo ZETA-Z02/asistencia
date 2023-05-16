@@ -8,7 +8,7 @@ class Conexion{
         $host = "localhost"; 
         $user = "root";
         $password = ""; 
-        $db = "asistencia";
+        $db = "transportes";
 
         $this->conn=new mysqli($host, $user,$password ,$db);
 
@@ -17,8 +17,9 @@ class Conexion{
             exit();
         }
 
-        #echo ver la conexion
-          return $this->conn;
+        //echo "ver la conexion";
+        return $this->conn;
+        //echo "conexion exitosa";
 
 
     }
