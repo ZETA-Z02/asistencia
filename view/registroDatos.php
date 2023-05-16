@@ -31,10 +31,12 @@
             <datalist id="browsers">
                 <option value="director">
                 <option value="personal">
+                <option value="practicante">
+                <option value="seguridad">
             </datalist>
         </div>
 
-        <button type="submit">loguearse</button>
+        <button type="submit">registrar</button>
     </form>
 
 

@@ -1,7 +1,19 @@
 <?php require "header.php";?>
 <!--header -->
+<?php
+require "../model/validar.model.php";
+echo $_GET['idpersonal'];
+//echo $_GET['cargo'];
+$idpersonal = $_GET['idpersonal'];  
+$validar = new Validar();   
+$idpersonal = $validar->idPersonal($idpersonal);
 
-    <h1>registor usuario</h1>
+$idper = $idpersonal['id_personal'];
+$idcar = $idpersonal['id_cargo'];
+
+?>
+
+<h1>registor usuario</h1>
 
 <form action = "../controller/registroUsuario.php" id = "my-form" method = "post">
     
@@ -15,7 +27,10 @@
         <span>repita la contrasena<input type="password" name="contraseña1" id="contraseña1"></span>
     </div>
 
-    <button type="submit">loguearse</button>
+    <input type="hidden" name= "idcargo" value=<?= $idcar ?>>
+    <input type="hidden" name= "idpersonal" value=<?= $idper ?>>
+
+    <button type="submit">registrar</button>
 </form>
 
 

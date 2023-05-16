@@ -5,7 +5,7 @@
 - id_personal *(PK)*  --- INT AUTO INCREMENT
 - nombre   ----VARCAHR(50)
 - apellido ------VARCHAR(50)
-- sexo  *(UQ)*  -----VARCAHR(10) 
+- sexo  -----VARCAHR(10) 
 - dni *(UQ)*  ----INT(8)
 - telefono *(UQ)* ----INT(9)
 - direccion ----int(9)

@@ -3,12 +3,12 @@
 
     <h1>asistencia</h1>
 
-    <form action = "loguin.controller.php" method = "post">
+    <form action = "../controller/loguin.controller.php" method = "post">
         <div>
-           <span>usuario<input type="usuario"></span>
+           <span>usuario<input type="usuario" name = "usuario"></span>
         </div>
         <div>
-            <span>contrasena<input type="password"></span>
+            <span>contrasena<input type="password" name = "password"></span>
         </div>
         <button type="submit">loguearse</button>
     </form>
