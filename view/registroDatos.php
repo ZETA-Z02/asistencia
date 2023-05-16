@@ -1,31 +1,69 @@
 <?php require "header.php";?>
 <!--header -->
 
-    <h1>asistencia</h1>
+<h1>REGISTRO DE PERSONAL</h1>
 
-    <form action = "../controller/registroDatos.php" id = "my-form" method = "post">
-        <div>
-            <span>nombre<input type="text" name="nombre"></span>
+<form method="post" action="../controller/registroDatos.php" id = "my-form" enctype="multipart/form-data">
+
+    <input type="hidden" name="idpersonal">
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="">Nombre</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="nombre" name="nombre">
         </div>
-        <div>
-            <span>apellidos<input type="text"  name="apellido"></span>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="">Apellidos:</label>
+        <div class="col-sm-8">
+            <input type="text" required class="form-control" id="apellido" name="apellidos">
         </div>
-        <div>
-            <span>sexo<input type="text"  name="sexo"></span>
+    </div>
+    <fieldset class="row mb-3">
+        <legend class="col-form-label col-sm-2 pt-0">Sexo:</legend>
+        <div class="col-sm-10">
+            <div class="form-check">
+                <input type="radio" name="sexo" required class="form-check-input" value="masculino">
+                <label class="form-check-label" for="Sexo"> Masculino</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="sexo" required class="form-check-input" value="femenino">
+                <label class="form-check-label" for="Sexo"> Femenino</label>
+            </div>
         </div>
-        <div>
-            <span>dni<input type="text"  name="dni"></span>
+    </fieldset>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">DNI:</label>
+        <div class="col-sm-2">
+            <input type="text" required class="form-control" id="dni" name="dni">
         </div>
-        <div>
-            <span>telefono<input type="text"  name="telefono"></span>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="">Telefono:</label>
+        <div class="col-sm-3">
+            <input type="text" required class="form-control" id="telefono" name="telefono">
         </div>
-        <div>
-            <span>direccion<input type="text"  name="direccion"></span>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Dirección:</label>
+        <div class="col-sm-2">
+            <input type="text" required class="form-control" id="direccion" name="direccion" >
         </div>
-        <div>
-            <span>ciudad<input type="text"  name="ciudad"></span>
+    </div>
+    <div class="row mb-3">
+        <label for="fecha_nacimiento" class="col-sm-2 col-form-label">Fecha de nacimiento:</label>
+        <div class="col-sm-2">
+            <input type="date" required class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
         </div>
-        <div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Ciudad:</label>
+        <div class="col-sm-2">
+            <input type="text" required class="form-control" id="direccion" name="ciudad" >
+        </div>
+    </div>
+    
+    <div>
         <span>cargo</span>
         <input type = "text" name="cargo" list="browsers" >
             <datalist id="browsers">
@@ -36,8 +74,15 @@
             </datalist>
         </div>
 
-        <button type="submit">registrar</button>
-    </form>
+   
+    
+    
+    
+
+    <div class="text-center">
+    <button type="submit" class="btn btn-primary" name="btn-agregar" id="btn-agregar">Guardar cambios</button>
+    </div>
+</form><!-- Finalizar formulario de edición de perfil -->
 
 
 
