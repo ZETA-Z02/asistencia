@@ -3,6 +3,13 @@ require ("../model/consultas.model.php");
 //instancia de consulta
 $consulta = new Consulta();
 
+if(!empty($_POST['masculino'])){
+    $sexo = $_POST['masculino'];
+}else{
+    $sexo = $_POST['femenino'];
+}
+
+
 if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['sexo']) && !empty($_POST['dni']) && !empty($_POST['telefono']) && !empty($_POST['direccion']) && !empty($_POST['ciudad']) && !empty($cargo = $_POST['cargo'])){
     //echo 'datos llegando';
     $nombre = $_POST['nombre'];
@@ -12,6 +19,7 @@ if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['sexo
     $telefono = $_POST['telefono'];
     $direccion = $_POST['direccion'];
     $ciudad = $_POST['ciudad'];
+
     $cargo = $_POST['cargo'];
 
     $verCargos=$consulta->verCargos($cargo);
@@ -39,7 +47,7 @@ if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['sexo
 
 }else{
     echo 'error faltan datos por llenar';
-    header("location: registroDatos.php");
+    header("location: ../view/registroDatos.php");
 }
 
 ?>

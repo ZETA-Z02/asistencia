@@ -11,12 +11,10 @@ class Validar{
         $this->conn = new Conexion();
     }
 
-
     public function Validar($usuario){
         $sql = "SELECT id_personal, id_cargo, usuario, contraseña FROM login WHERE usuario = '$usuario';";
         $data = $this->conn->ConsultaArray($sql);
         return $data;
-
     }
     public function RegistrarUsuario($idpersonal,$idcargo,$usuario,$contrasena){
         $sql = "INSERT INTO login VALUES(null,$idpersonal,$idcargo,'$usuario','$contrasena');";
@@ -25,6 +23,11 @@ class Validar{
 
     public function idPersonal($idpersonal){
         $sql = "SELECT id_personal,id_cargo FROM personal WHERE id_personal ='$idpersonal';";
+        $data = $this->conn->ConsultaArray($sql);
+        return $data;
+    }
+    public function cargo($idpersonal){
+        $sql = "SELECT * FROM cargo WHERE id_personal ='$idpersonal';";
         $data = $this->conn->ConsultaArray($sql);
         return $data;
     }

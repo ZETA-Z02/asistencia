@@ -3,7 +3,7 @@
 
 <h1>REGISTRO DE PERSONAL</h1>
 
-<form method="post" action="../controller/registroDatos.php" id = "my-form" enctype="multipart/form-data">
+<form action="../controller/registroDatos.controller.php" method="post" id = "my-form">
 
     <input type="hidden" name="idpersonal">
 
@@ -16,20 +16,12 @@
     <div class="row mb-3">
         <label class="col-sm-2 col-form-label" for="">Apellidos:</label>
         <div class="col-sm-8">
-            <input type="text" required class="form-control" id="apellido" name="apellidos">
+            <input type="text" required class="form-control" id="apellido" name="apellido">
         </div>
     </div>
     <fieldset class="row mb-3">
         <legend class="col-form-label col-sm-2 pt-0">Sexo:</legend>
-        <div class="col-sm-10">
-            <div class="form-check">
-                <input type="radio" name="sexo" required class="form-check-input" value="masculino">
-                <label class="form-check-label" for="Sexo"> Masculino</label>
-            </div>
-            <div class="form-check">
-                <input type="radio" name="sexo" required class="form-check-input" value="femenino">
-                <label class="form-check-label" for="Sexo"> Femenino</label>
-            </div>
+        <input type="text" name = "sexo">
         </div>
     </fieldset>
     <div class="row mb-3">
@@ -73,14 +65,8 @@
                 <option value="seguridad">
             </datalist>
         </div>
-
-   
-    
-    
-    
-
     <div class="text-center">
-    <button type="submit" class="btn btn-primary" name="btn-agregar" id="btn-agregar">Guardar cambios</button>
+        <button type="submit" class="btn btn-primary" name="btn-agregar" id="btn-agregar">Guardar cambios</button>
     </div>
 </form><!-- Finalizar formulario de edición de perfil -->
 

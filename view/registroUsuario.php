@@ -15,7 +15,7 @@ $idcar = $idpersonal['id_cargo'];
 
 <h1>registor usuario</h1>
 
-<form action = "../controller/registroUsuario.php" id = "my-form" method = "post">
+<form action = "../controller/registroUsuario.controller.php" id = "my-form" method = "post">
     
     <div>
         <span>usuario<input type="text" name="usuario"></span>

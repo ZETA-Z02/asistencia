@@ -19,6 +19,7 @@ if(!empty($_POST['usuario']) && !empty($_POST['contraseña']) && ($_POST['contra
     $idcargo = $_POST['idcargo'];
 
     $contrasena = password_hash($_POST['contraseña'], PASSWORD_BCRYPT);
+    
     $validar->registrarUsuario($idpersonal,$idcargo,$usuario, $contrasena);
     
     header("location: ../");
