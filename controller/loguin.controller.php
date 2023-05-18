@@ -6,7 +6,7 @@ session_start();
 
 $validar = new Validar();
 //strpos($variable,'busqueda de ciertos caracteres'); == devuelve la posicion de la busquedao o false si no encuentnra nada
-$fecha = date("Y-m-d");
+$fecha = date("Y-m-d");  
 $hora = date("H:i:s");
 
 switch (true) {

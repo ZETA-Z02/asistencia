@@ -11,13 +11,10 @@ class Consulta{
         $this->conn = new Conexion();
         return $this->conn;
     }
-
-
     public function verCargos($cargo){
         $sql = "SELECT id_cargo,cargo,nivel_usuario FROM cargo WHERE cargo = '$cargo';";
         $data = $this->conn->ConsultaArray($sql);
         return $data;
-
     }
     public function RegistrarPersonal($nombre,$apellido,$sexo,$dni,$telefono,$direccion,$ciudad,$idcargo){
         $sql = "INSERT INTO personal VALUES(null,'$nombre','$apellido','$sexo','$dni','$telefono','$direccion','$ciudad','$idcargo');";
@@ -33,6 +30,11 @@ class Consulta{
         $sql = "SELECT p.*,c.cargo  FROM personal p  JOIN cargo c on p.id_cargo = c.id_cargo;";
         $data = $this->conn->ConsultaCon($sql);
         return $data;
+    }
+
+    public function borrarPersonal($idpersonal){
+        $sql = "DELETE FROM personal WHERE id_personal  = '$idpersonal';";
+        $this->conn->ConsultaSin($sql);
     }
 
 }

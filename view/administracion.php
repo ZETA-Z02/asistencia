@@ -31,29 +31,27 @@ $personal = $consulta->verPersonal();
                 
                 while($row = mysqli_fetch_array($personal)) {?>
                     <tr>
-                        <td><?php echo $row['nombre']?> </td> 
+                        <td><?php echo $row['nombre']?> </td>
                         <td><?php echo $row['apellido']?> </td> 
-                        <td><?php echo $row['sexo']?> </td> 
-                        <td><?php echo $row['dni']?> </td> 
-                        <td><?php echo $row['telefono']?> </td> 
-                        <td><?php echo $row['direccion']?> </td> 
-                        <td><?php echo $row['ciudad']?> </td> 
-                        <td><?php echo $row['cargo']?> </td> 
+                        <td><?php echo $row['sexo']?> </td>
+                        <td><?php echo $row['dni']?> </td>
+                        <td><?php echo $row['telefono']?> </td>
+                        <td><?php echo $row['direccion']?> </td>
+                        <td><?php echo $row['ciudad']?> </td>
+                        <td><?php echo $row['cargo']?> </td>
                         <td>
                             <a href="">
                                 edit
                             </a>
-                        </td> 
+                        </td>
                         <td>
                             <a href="../controllers/editar.controller.php?id=<?php echo $row['id_personal'];?>">
                                 delete
                             </a>
-                        </td> 
-                        
-                    </tr>                       
-                
+                        </td>
+                    </tr>                   
                 <?php }?>                  
-            </tbody>           
+            </tbody>      
         </table>
             </div>
         
