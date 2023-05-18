@@ -29,6 +29,11 @@ class Consulta{
         return $data;
     }
 
+    public function verUsuario($){
+        $sql = "";
+        $data = $this->conn->ConsultaArray($sql);
+        return $data;
+    }
 
 }
 

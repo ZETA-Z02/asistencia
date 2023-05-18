@@ -12,7 +12,7 @@ class Validar{
     }
 
     public function Validar($usuario){
-        $sql = "SELECT id_personal, id_cargo, usuario, contraseña FROM login WHERE usuario = '$usuario';";
+        $sql = "SELECT id_login,id_personal, id_cargo, usuario, contraseña FROM login WHERE usuario = '$usuario';";
         $data = $this->conn->ConsultaArray($sql);
         return $data;
     }
@@ -27,10 +27,23 @@ class Validar{
         return $data;
     }
     public function cargo($idpersonal){
-        $sql = "SELECT * FROM cargo WHERE id_personal ='$idpersonal';";
+        $sql = "SELECT c.id_cargo, c.cargo, c.nivel_usuario,c.turno,l.id_login, l.id_personal, l.usuario 
+        FROM cargo c JOIN login l ON c.id_cargo = l.id_cargo where l.id_personal = '$idpersonal';";
         $data = $this->conn->ConsultaArray($sql);
         return $data;
     }
+
+    public function marcarAsistencia($id_login,$tipo,$hora,$fecha){
+        $sql = "INSERT INTO asistencia VALUES(null,'$id_login','$tipo','$hora','$fecha',null);";
+        $this->conn->ConsultaSin($sql);
+    }
+
+    public function verificarEntrada($idlogin,$fecha){
+        $sql = "SELECT count(*) as total FROM asistencia WHERE id_login = $idlogin AND fecha = '$fecha';";
+        $data = $this->conn->ConsultaArray($sql);
+        return $data;
+    }
+    
 
     
 

@@ -6,8 +6,8 @@ class Conexion{
     public function __construct(){
         
         $host = "localhost"; 
-        $user = "root";
-        $password = ""; 
+        $user = "jersson";
+        $password = "jersson"; 
         $db = "transportes";
 
         $this->conn=new mysqli($host, $user,$password ,$db);

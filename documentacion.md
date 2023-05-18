@@ -110,8 +110,7 @@
 1. crear asistencia 
 2. leer a todo el asistencia
 3. leer un asistencia en particular
-4. actualizar a un asistencia 
-5. eliminar a un asistencia 
+4. actualizar a un asistencia
 
 #### ausencia
 

@@ -17,7 +17,7 @@
     <form action="../controller/loguin.controller.php" method="post" class="col-3 login" autocomplete="off">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email </label>
-            <input type="email" name="usuario" class="form-control" id="exampleInputEmail1" placeholder="user@senati.pe" aria-describedby="emailHelp">
+            <input type="text" name="usuario" class="form-control" id="exampleInputEmail1" placeholder="user@senati.pe" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
