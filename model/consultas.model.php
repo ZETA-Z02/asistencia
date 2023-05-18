@@ -29,9 +29,9 @@ class Consulta{
         return $data;
     }
 
-    public function verUsuario($){
-        $sql = "";
-        $data = $this->conn->ConsultaArray($sql);
+    public function verPersonal(){
+        $sql = "SELECT p.*,c.cargo  FROM personal p  JOIN cargo c on p.id_cargo = c.id_cargo;";
+        $data = $this->conn->ConsultaCon($sql);
         return $data;
     }
 

@@ -34,7 +34,7 @@ class Validar{
     }
 
     public function marcarAsistencia($id_login,$tipo,$hora,$fecha){
-        $sql = "INSERT INTO asistencia VALUES(null,'$id_login','$tipo','$hora','$fecha',null);";
+        $sql = "INSERT INTO asistencia VALUES(null,'$id_login','$tipo','$hora','$fecha',null,null);";
         $this->conn->ConsultaSin($sql);
     }
 
