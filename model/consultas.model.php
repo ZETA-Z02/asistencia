@@ -32,11 +32,6 @@ class Consulta{
         return $data;
     }
 
-    public function borrarPersonal($idpersonal){
-        $sql = "DELETE FROM personal WHERE id_personal  = '$idpersonal';";
-        $this->conn->ConsultaSin($sql);
-    }
-
     public function todosCargos(){
         $sql = "SELECT * FROM cargo;";
         $data = $this->conn->ConsultaCon($sql);
@@ -46,6 +41,26 @@ class Consulta{
         $sql = "SELECT * FROM login;";
         $data = $this->conn->ConsultaCon($sql);
         return $data;
+    }
+    //borrar personal
+    public function borrarPersonal($idpersonal){
+        $sql = "DELETE FROM personal WHERE id_personal  = '$idpersonal';";
+        $this->conn->ConsultaSin($sql);
+    }
+    //borrar login junto a personal, por que si borra personal por ende deberia borrar su login
+    public function borrarLoginconPersonal($idpersonal){
+        $sql = "DELETE FROM login WHERE id_personal  = '$idpersonal';";
+        $this->conn->ConsultaSin($sql);
+    }
+    //borrar cargo
+    public function borrarCargo($idcargo){
+        $sql = "DELETE FROM cargo WHERE id_cargo  = '$idcargo';";
+        $this->conn->ConsultaSin($sql);
+    }
+    //borrar login
+    public function borrarLogin($idLogin){
+        $sql = "DELETE FROM login WHERE id_login  = '$idLogin';";
+        $this->conn->ConsultaSin($sql);
     }
 
 }

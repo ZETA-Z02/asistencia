@@ -25,6 +25,7 @@ $login = $consulta->todosLogin();
                     <th> cargo </th>
                     <th> edit </th>
                     <th> delete </th>
+                    <th> crear un usuario login </th>
                 </tr>
             </thead>
             
@@ -47,8 +48,14 @@ $login = $consulta->todosLogin();
                             </a>
                         </td>
                         <td>
-                            <a href="../controllers/editar.controller.php?id=<?php echo $row['id_personal'];?>">
+                            <a href="../controller/delete.controller.php?id_personal=<?php echo $row['id_personal'];?>">
                                 delete
+                            </a>
+                        </td>
+                        //se deberia crear un login, verificar si ya tiene un login y si no tiene se deberia poder crear
+                        <td>
+                            <a href="../controller/delete.controller.php?id_personal=<?php echo $row['id_personal'];?>">
+                                crear login
                             </a>
                         </td>
                     </tr>                   
@@ -70,6 +77,7 @@ $login = $consulta->todosLogin();
                     <th> horas_trabajo </th>
                     <th> edit </th>
                     <th> delete </th>
+                    <th> añadir cargo </th>
                 </tr>
             </thead>
             
@@ -92,8 +100,13 @@ $login = $consulta->todosLogin();
                             </a>
                         </td>
                         <td>
-                            <a href="../controllers/editar.controller.php?id=<?php echo $row['id_cargo'];?>">
+                            <a href="../controller/delete.controller.php?id_cargo=<?php echo $row['id_cargo'];?>">
                                 delete
+                            </a>
+                        </td>
+                        <td>
+                            <a href="../controllers/editar.controller.php?id=<?php echo $row['id_cargo'];?>">
+                                añadir cargo
                             </a>
                         </td>
                     </tr>                   
@@ -131,7 +144,7 @@ $login = $consulta->todosLogin();
                             </a>
                         </td>
                         <td>
-                            <a href="../controllers/editar.controller.php?id=<?php echo $row['id_cargo'];?>">
+                            <a href="../controller/delete.controller.php?id_login=<?php echo $row['id_login'];?>">
                                 delete
                             </a>
                         </td>

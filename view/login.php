@@ -83,7 +83,7 @@
         <input type="text" name="usuario" placeholder="Usuario">
         <br>
         <br>
-        <input type="text" name="password" placeholder="Contraseña">
+        <input type="password" name="password" placeholder="Contraseña">
         <br>
         <br>
         <button type="submit" href="">Iniciar Sesión</button>
