@@ -37,6 +37,17 @@ class Consulta{
         $this->conn->ConsultaSin($sql);
     }
 
+    public function todosCargos(){
+        $sql = "SELECT * FROM cargo;";
+        $data = $this->conn->ConsultaCon($sql);
+        return $data;
+    }
+    public function todosLogin(){
+        $sql = "SELECT * FROM login;";
+        $data = $this->conn->ConsultaCon($sql);
+        return $data;
+    }
+
 }
 
 

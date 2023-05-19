@@ -9,7 +9,7 @@ $validar = new Validar();
 $fecha = date("Y-m-d");  
 $hora = date("H:i:s");
 
-switch (true) {
+switch (true) { 
     case ($hora >= '07:00:00' && $hora < '07:30:00'):
         echo "Es entrada matutina";
         $tipo = 'Entrada matutina';
@@ -71,6 +71,8 @@ if(!empty($_POST['usuario']) && !empty($_POST['password'])){
                 $_SESSION['admin'] = $validarUsuario['id_personal'];
                 $_SESSION['inicio'] = time();
                 $_SESSION['privilegio'] = $validarUsuario['nivel_usuario'];
+                $_SESSION['id_login'] = $validarUsuario['id_login'];
+
                          
                 //echo $_SESSION['id'];
                 //echo $_SESSION['privilegio'];
@@ -84,6 +86,7 @@ if(!empty($_POST['usuario']) && !empty($_POST['password'])){
                 $_SESSION['personal'] = $validarUsuario['id_personal'];
                 $_SESSION['inicio'] = time();
                 $_SESSION['privilegio'] = $validarUsuario['nivel_usuario'];
+                $_SESSION['id_login'] = $validarUsuario['id_login'];
 
                 //$validar->marcarAsistencia($validarUsuario['id_login'],$tipo,$hora,$fecha);
 
@@ -97,6 +100,7 @@ if(!empty($_POST['usuario']) && !empty($_POST['password'])){
                 $_SESSION['personal_comun'] = $validarUsuario['id_personal'];
                 $_SESSION['inicio'] = time();
                 $_SESSION['privilegio'] = $validarUsuario['nivel_usuario'];
+                $_SESSION['id_login'] = $validarUsuario['id_login'];
                 
                 
                 
