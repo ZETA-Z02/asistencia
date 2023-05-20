@@ -11,32 +11,36 @@ class Consulta{
         $this->conn = new Conexion();
         return $this->conn;
     }
+    //ver el los cargos y sus datos de la fila
     public function verCargos($cargo){
         $sql = "SELECT id_cargo,cargo,nivel_usuario FROM cargo WHERE cargo = '$cargo';";
         $data = $this->conn->ConsultaArray($sql);
         return $data;
     }
+    //para registrar al personal en la tabla personal
     public function RegistrarPersonal($nombre,$apellido,$sexo,$dni,$telefono,$direccion,$ciudad,$idcargo){
         $sql = "INSERT INTO personal VALUES(null,'$nombre','$apellido','$sexo','$dni','$telefono','$direccion','$ciudad','$idcargo');";
         $this->conn->ConsultaSin($sql);
     }
+    //para ver el id del personal y el id cargo que posee
     public function veridPersonal($nombre,$apellido,$dni){
         $sql = "SELECT id_personal,id_cargo FROM personal WHERE nombre = '$nombre' AND apellido = '$apellido' AND dni = '$dni';";
         $data = $this->conn->ConsultaArray($sql);
         return $data;
     }
-
+    //todos los datos del personal mas la columna cargo de la tabla cargo
     public function verPersonal(){
         $sql = "SELECT p.*,c.cargo  FROM personal p  JOIN cargo c on p.id_cargo = c.id_cargo;";
         $data = $this->conn->ConsultaCon($sql);
         return $data;
     }
-
+    //todos los cargos de login 
     public function todosCargos(){
         $sql = "SELECT * FROM cargo;";
         $data = $this->conn->ConsultaCon($sql);
         return $data;
     }
+    //todos los datos de login 
     public function todosLogin(){
         $sql = "SELECT * FROM login;";
         $data = $this->conn->ConsultaCon($sql);
@@ -62,6 +66,26 @@ class Consulta{
         $sql = "DELETE FROM login WHERE id_login  = '$idLogin';";
         $this->conn->ConsultaSin($sql);
     }
+    //para ver un cargo en particular para editar
+    public function cargoParticular($idcargo){
+        $sql = "SELECT * FROM cargo WHERE id_cargo = '$idcargo';";
+        $data = $this->conn->ConsultaArray($sql);
+        return $data;
+    }
+    //para ver un login en particular para editar
+    public function loginParticular($idlogin){
+        $sql = "SELECT * FROM login WHERE id_login = '$idlogin';";
+        $data = $this->conn->ConsultaArray($sql);
+        return $data;
+    }
+    //para ver un personal en particular para editar
+    public function personalParticular($idpersonal){
+        $sql = "SELECT * FROM personal WHERE id_personal = '$idpersonal';";
+        $data = $this->conn->ConsultaArray($sql);
+        return $data;
+    }
+
+
 
 }
 

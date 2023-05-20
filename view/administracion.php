@@ -43,18 +43,18 @@ $login = $consulta->todosLogin();
                         <td><?php echo $row['ciudad']?> </td>
                         <td><?php echo $row['cargo']?> </td>
                         <td>
-                            <a href="">
+                            <a href="../controller/edit.hubicar.php?id_personal=<?=$row['id_personal'];?>">
                                 edit
                             </a>
                         </td>
                         <td>
-                            <a href="../controller/delete.controller.php?id_personal=<?php echo $row['id_personal'];?>">
+                            <a href="../controller/delete.controller.php?id_personal=<?=$row['id_personal'];?>">
                                 delete
                             </a>
                         </td>
-                        //se deberia crear un login, verificar si ya tiene un login y si no tiene se deberia poder crear
+                        <!--se deberia crear un login, verificar si ya tiene un login y si no tiene se deberia poder crear-->
                         <td>
-                            <a href="../controller/delete.controller.php?id_personal=<?php echo $row['id_personal'];?>">
+                            <a href="../controller/crearLogin.controller.php?id_personal=<?=$row['id_personal'];?>">
                                 crear login
                             </a>
                         </td>
@@ -95,7 +95,7 @@ $login = $consulta->todosLogin();
                         <td><?php echo $row['horas_trabajo']?> </td>
                         
                         <td>
-                            <a href="">
+                            <a href="../controller/edit.hubicar.php?id_cargo=<?=$row['id_cargo'];?>">
                                 edit
                             </a>
                         </td>
@@ -139,7 +139,7 @@ $login = $consulta->todosLogin();
                         <td><input type="password" value = '<?php echo $row['contraseña']?>' disabled ></td>
                                                 
                         <td>
-                            <a href="">
+                            <a href="../controller/edit.hubicar.php?id_login=<?=$row['id_login'];?>">
                                 edit
                             </a>
                         </td>

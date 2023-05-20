@@ -7,7 +7,7 @@ switch(true){
   case (isset($_GET['id_personal'])):
     $id_personal = $_GET['id_personal'];
     $consulta->borrarPersonal($id_personal);
-    $consulta->borrarLogin($id_personal);
+    $consulta->borrarLoginconPersonal($id_personal);
     echo 'se ejecuta borrar personal';
     header("location: ../view/");
     break;
