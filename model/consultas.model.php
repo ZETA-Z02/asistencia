@@ -85,6 +85,13 @@ class Consulta{
         return $data;
     }
 
+    //
+    public function consultaHora($id_login){
+        $sql = "SELECT COUNT(*) as 'total' from asistencia WHERE id_login='$id_login' ";
+        $data = $this->conn->ConsultaArray($sql);
+        return $data;
+    }
+
 
 
 }

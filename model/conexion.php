@@ -1,5 +1,4 @@
 <?php
-
 date_default_timezone_set('America/Lima');
 
 class Conexion{
@@ -9,8 +8,8 @@ class Conexion{
     public function __construct(){
         
         $host = "localhost"; 
-        $user = "jersson";
-        $password = "jersson"; 
+        $user = "root";
+        $password = ""; 
         $db = "transportes";
 
         $this->conn=new mysqli($host, $user,$password ,$db);
@@ -34,6 +33,7 @@ class Conexion{
             echo "Error. ".mysqli_error($this->conn);
             exit();
         }
+        return true;
     }
 
     
@@ -63,11 +63,9 @@ class Conexion{
         $data = $result->fetch_array(MYSQLI_ASSOC);
         return $data;
     }
+    
 
 
 }
-
-
-
 
 ?>

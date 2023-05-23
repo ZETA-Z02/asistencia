@@ -2,7 +2,7 @@
 <!--header -->
 <?php
 require "../model/validar.model.php";
-echo $_GET['idpersonal'];
+$_GET['idpersonal'];
 //echo $_GET['cargo'];
 $idpersonal = $_GET['idpersonal'];  
 $validar = new Validar();   

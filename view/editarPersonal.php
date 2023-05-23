@@ -8,7 +8,7 @@ $consulta = new Consulta();
 
 //llega el id login 
 //echo $_GET['idpersonal'];
-$id_personal = $_GET['idpersonal'];
+$id_personal = $_GET['id_personal'];
 //echo $id_personal;
 $personal = $consulta->personalParticular($id_personal);
 

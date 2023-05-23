@@ -46,6 +46,7 @@ class Validar{
         return $data;
     }
     
+    
 
     
 
