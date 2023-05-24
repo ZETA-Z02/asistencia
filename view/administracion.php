@@ -1,6 +1,10 @@
-<?php include("header.php") ;
+<?php 
 session_start();
-require "../model/consultas.model.php";
+
+if(isset($_SESSION['admin']))
+{
+    include("header.php") ;
+    require "../model/consultas.model.php";
 
 $consulta = new Consulta();
 
@@ -153,9 +157,20 @@ $login = $consulta->todosLogin();
             </tbody>      
         </table>
     </div>
+
+
+    <div>
+        <a href="salida.view.php">
+        <input type="submit"  name="salir">
+        </a>
+    </div>
         
     
 <?php include("footer.php");
+}else{
+    echo "No te muestro nada";
+    header("Location: login.php");
+}
 
 ?>
 

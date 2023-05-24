@@ -9,10 +9,10 @@ $consulta = new Consulta();
 
 //llega el id login 
 //echo $_GET['idlogin'];
-$id_login = $_GET['idlogin'];
+echo $id_login = $_GET['idlogin'];
 //echo $id_login;
 
-$login = $consulta->loginParticular($id_login);
+echo $login = $consulta->loginParticular($id_login);
 
 ?>
 
