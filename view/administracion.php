@@ -160,9 +160,7 @@ $login = $consulta->todosLogin();
 
 
     <div>
-        <a href="salida.view.php">
-        <input type="submit"  name="salir">
-        </a>
+        <a href="salida.view.php" type="submit">salir</a>
     </div>
         
     
