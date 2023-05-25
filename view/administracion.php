@@ -58,7 +58,7 @@ $login = $consulta->todosLogin();
                         </td>
                         <!--se deberia crear un login, verificar si ya tiene un login y si no tiene se deberia poder crear-->
                         <td>
-                            <a href="../controller/crearLogin.controller.php?id_personal=<?=$row['id_personal'];?>">
+                            <a href="../view/registroUsuario.php?idpersonal=<?=$row['id_personal'];?>"">
                                 crear login
                             </a>
                         </td>
@@ -109,7 +109,7 @@ $login = $consulta->todosLogin();
                             </a>
                         </td>
                         <td>
-                            <a href="../controllers/editar.controller.php?id=<?php echo $row['id_cargo'];?>">
+                            <a href="newCargo.php">
                                 añadir cargo
                             </a>
                         </td>
@@ -162,8 +162,18 @@ $login = $consulta->todosLogin();
 
 
     <div>
-        <a href="salida.view.php">
+        <a href="../controller/salida.controller.php">
             <button>salir</button>
+        </a>
+    </div>
+    <div>
+        <a href="registroDatos.php">
+            <button>anadir personal</button>
+        </a>
+    </div>
+    <div>
+        <a href="verAsistencia.php">
+            <button>ver asistencia</button>
         </a>
     </div>
         

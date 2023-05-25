@@ -1,5 +1,10 @@
 <?php require "header.php";?>
 <!--header -->
+<?php 
+require ("../model/consultas.model.php");
+$consulta = new Consulta();
+$cargos = $consulta->todosCargos();
+?>
 
 <h1>REGISTRO DE PERSONAL</h1>
 
@@ -59,10 +64,9 @@
         <span>cargo</span>
         <input type = "text" name="cargo" list="browsers" >
             <datalist id="browsers">
-                <option value="director">
-                <option value="personal">
-                <option value="practicante">
-                <option value="seguridad">
+            <?php while($row = mysqli_fetch_array($cargos)) {?>
+                <option value="<?= $row['cargo']?>">
+            <?php }?>
             </datalist>
         </div>
     <div class="text-center">

@@ -26,7 +26,7 @@ switch(true){
   default:
 
   echo 'no hay ni un id';
-  header("location: ../view/");
+  header("location: ../view/administracion.php");
 
 } 
 

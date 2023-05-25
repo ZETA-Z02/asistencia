@@ -121,6 +121,18 @@ class Consulta{
         $this->conn->ConsultaSin($sql);
     }
 
+    public function mostrarAsistenciaPersonal($id_login){
+        $sql = "SELECT * FROM asistencia WHERE id_login = $id_login;";
+        $data = $this->conn->ConsultaCon($sql);
+        return $data;
+    }
+    public function mostrarAsistencia(){
+        $sql = "SELECT * FROM asistencia";
+        $data = $this->conn->ConsultaCon($sql);
+        return $data;
+    }
+
+
 
 
 

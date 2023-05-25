@@ -5,7 +5,7 @@ include("header.php") ;
 require "../model/consultas.model.php";
 
 $consulta = new Consulta();
-$asistenciaPersonal = $consulta->mostrarAsistenciaPersonal($_SESSION['id_login']);
+$asistencia = $consulta->mostrarAsistencia();
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ $asistenciaPersonal = $consulta->mostrarAsistenciaPersonal($_SESSION['id_login']
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width= , initial-scale=1.0">
-    <title>Personal</title>
+    <title>Asistencia</title>
 </head>
 <body>
     <br>
@@ -22,6 +22,7 @@ $asistenciaPersonal = $consulta->mostrarAsistenciaPersonal($_SESSION['id_login']
         <thead>
             <tr>
                 <th>id_asistencia</th>
+                <th>id_login</th>
                 <th>tipo</th>
                 <th>hora</th>
                 <th>fecha</th>
@@ -31,11 +32,12 @@ $asistenciaPersonal = $consulta->mostrarAsistenciaPersonal($_SESSION['id_login']
         </thead>
         <tbody>
             <?php
-            while($mostrar=mysqli_fetch_array($asistenciaPersonal)){
+            while($mostrar=mysqli_fetch_array($asistencia)){
             ?>
             
                 <tr>
                     <td><?php echo $mostrar['id_asistencia']?></td>
+                    <td><?php echo $mostrar['id_login']?></td>
                     <td><?php echo $mostrar['tipo']?></td>
                     <td><?php echo $mostrar['hora']?></td>
                     <td><?php echo $mostrar['fecha']?></td>
@@ -51,7 +53,7 @@ $asistenciaPersonal = $consulta->mostrarAsistenciaPersonal($_SESSION['id_login']
 
 
     <div>
-        <a href="../controller/salida.controller.php">
+        <a href="salida.view.php">
             <button>salir</button>
         </a>
     </div>
