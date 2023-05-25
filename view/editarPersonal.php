@@ -8,9 +8,13 @@ $consulta = new Consulta();
 
 //llega el id login 
 //echo $_GET['idpersonal'];
-$id_personal = $_GET['id_personal'];
+$id_personal = $_GET['idpersonal'];
 //echo $id_personal;
 $personal = $consulta->personalParticular($id_personal);
+//segun el id del personal se ve su cargo
+$cargoName = $consulta->cargoParticular($personal['id_cargo']);
+
+
 
 ?>
 
@@ -35,13 +39,13 @@ $personal = $consulta->personalParticular($id_personal);
     </div>
     <fieldset class="row mb-3">
         <legend class="col-form-label col-sm-2 pt-0">Sexo:</legend>
-        <input type="text" name = "sexo" value = "<?= $personal['sexo']?>" disabled>
+        <input type="text" name = "sexo" value = "<?= $personal['sexo']?>" readonly>
         </div>
     </fieldset>
     <div class="row mb-3">
         <label class="col-sm-2 col-form-label">DNI:</label>
         <div class="col-sm-2">
-            <input type="text" required class="form-control" id="dni" name="dni"  value = "<?= $personal['dni']?>">
+            <input type="text" required class="form-control" id="dni" name="dni"  value = "<?= $personal['dni']?>" readonly>
         </div>
     </div>
     <div class="row mb-3">
@@ -56,12 +60,14 @@ $personal = $consulta->personalParticular($id_personal);
             <input type="text" required class="form-control" id="direccion" name="direccion" value = "<?= $personal['direccion']?>">
         </div>
     </div>
+    <!--
     <div class="row mb-3">
         <label for="fecha_nacimiento" class="col-sm-2 col-form-label">Fecha de nacimiento:</label>
         <div class="col-sm-2">
             <input type="date" required class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"  value = "">
         </div>
     </div>
+    -->
     <div class="row mb-3">
         <label class="col-sm-2 col-form-label">Ciudad:</label>
         <div class="col-sm-2">
@@ -71,7 +77,7 @@ $personal = $consulta->personalParticular($id_personal);
     
     <div>
         <span>cargo</span>
-        <input type = "text" name="cargo" list="browsers" value = "<?= $personal['id_cargo']?>" >
+        <input type = "text" name="cargo" list="browsers" placeholder= "<?= $cargoName['cargo']?>" >
             <datalist id="browsers">
                 <option value="director">
                 <option value="personal">

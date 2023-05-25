@@ -1,6 +1,6 @@
 <?php 
 session_start();
-
+//falta poner para ver las asistencias de todos
 if(isset($_SESSION['admin']))
 {
     include("header.php") ;
@@ -125,6 +125,7 @@ $login = $consulta->todosLogin();
                 <tr>
                     <th> id_login </th>
                     <th> id_personal </th>
+                    <th> id_cargo </th>
                     <th> usuario </th>
                     <th> contrasena </th>
                     <th> edit </th>
@@ -139,6 +140,7 @@ $login = $consulta->todosLogin();
                     <tr>
                         <td><?php echo $row['id_login']?> </td>
                         <td><?php echo $row['id_personal']?> </td> 
+                        <td><?php echo $row['id_cargo']?> </td> 
                         <td><?php echo $row['usuario']?> </td>
                         <td><input type="password" value = '<?php echo $row['contraseña']?>' disabled ></td>
                                                 
@@ -161,7 +163,7 @@ $login = $consulta->todosLogin();
 
     <div>
         <a href="salida.view.php">
-        <input type="submit"  name="salir">
+            <button>salir</button>
         </a>
     </div>
         

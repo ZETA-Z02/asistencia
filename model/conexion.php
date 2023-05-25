@@ -9,7 +9,7 @@ class Conexion{
         
         $host = "localhost"; 
         $user = "root";
-        $password = ""; 
+        $password = "zeta"; 
         $db = "transportes";
 
         $this->conn=new mysqli($host, $user,$password ,$db);

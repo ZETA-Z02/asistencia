@@ -3,14 +3,7 @@ require ("../model/consultas.model.php");
 //instancia de consulta
 $consulta = new Consulta();
 
-if(!empty($_POST['masculino'])){
-    $sexo = $_POST['masculino'];
-}else{
-    $sexo = $_POST['femenino'];
-}
-
-
-if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['sexo']) && !empty($_POST['dni']) && !empty($_POST['telefono']) && !empty($_POST['direccion']) && !empty($_POST['ciudad']) && !empty($cargo = $_POST['cargo'])){
+if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['sexo']) && !empty($_POST['dni']) && !empty($_POST['telefono']) && !empty($_POST['direccion']) && !empty($_POST['ciudad']) && !empty($_POST['cargo'])){
     //echo 'datos llegando';
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];

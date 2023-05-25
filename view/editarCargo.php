@@ -30,7 +30,7 @@ if($cargo['planilla']==1){
 <form action = "../controller/editar.php?idcargo=<?=$cargo['id_cargo']?>" id = "my-form" method = "post">
     
     <div>
-        <span>cargo<input type="text" name="usuario" value = "<?= $cargo['cargo'];?>"></span>
+        <span>cargo<input type="text" name="cargo" value = "<?= $cargo['cargo'];?>"></span>
     </div>
     <div>
         <span>pago por hora<input type="text" name="pago_hora" value = "<?= $cargo['pago_hora'];?>"></span>
@@ -48,10 +48,8 @@ if($cargo['planilla']==1){
         <span>horas de trabajo<input type="text" name="horas_trabajo" value = "<?= $cargo['horas_trabajo'];?>"></span>
     </div>
 
-    <input type="hidden" name= "idcargo" value=<?= $idcar ?>>
-    <input type="hidden" name= "idpersonal" value=<?= $idper ?>>
-
     <button type="submit">guardar cambios</button>
+
 </form>
 
 

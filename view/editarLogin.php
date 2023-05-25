@@ -9,10 +9,10 @@ $consulta = new Consulta();
 
 //llega el id login 
 //echo $_GET['idlogin'];
-echo $id_login = $_GET['idlogin'];
+$id_login = $_GET['idlogin'];
 //echo $id_login;
 
-echo $login = $consulta->loginParticular($id_login);
+$login = $consulta->loginParticular($id_login);
 
 ?>
 
@@ -24,16 +24,14 @@ echo $login = $consulta->loginParticular($id_login);
         <span>usuario<input type="text" name="usuario" value = "<?= $login['usuario'];?>"></span>
     </div>
     <div>
-        <span>contrasena<input type="password" name="contraseña" id="contraseña" placeholder = "ingrese su contrasena"></span>
+        <span>contrasena<input type="password" name="password" placeholder = "ingrese su contrasena"></span>
     </div>
     <div>
-        <span>nueva contrasena<input type="password" name="contraseña" id="contraseña" placeholder = "nueva contrasena"></span>
+        <span>nueva contrasena<input type="password" name="contraseña" id = "password1" placeholder = "nueva contrasena"></span>
     </div>
     <div>
-        <span>repita la contrasena<input type="password" name="contraseña1" id="contraseña1" placeholder = "repita la contrasena"></span>
+        <span>repita la contrasena<input type="password" name="contraseña1" id = "newpassword1" placeholder = "repita la contrasena"></span>
     </div>
-    <input type="hidden" name= "idcargo" value=<?= $idcar ?>>
-    <input type="hidden" name= "idpersonal" value=<?= $idper ?>>
 
     <button type="submit">registrar</button>
 </form>
