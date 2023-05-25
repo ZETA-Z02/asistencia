@@ -37,14 +37,14 @@ switch(true){
 
             }else{
                 echo 'no se cumple y no se actualiza datos';
-                header("location: ");
+                header("location: ../view/administracion.php");
             }
         
             
         
         }else{
             echo 'error faltan datos por llenar';
-            header("location: ");
+            header("location: ../view/administracion.php");
         }
 
         break;
@@ -77,7 +77,7 @@ switch(true){
             
         }else{
             echo 'error faltan datos por llenar';
-            header("location: ");
+            header("location: ../view/administracion.php");
         }
 
 
@@ -104,7 +104,7 @@ switch(true){
             header("location: ");
         }else{
             echo 'error faltan datos por llenar';
-            header("location: ");
+            header("location: ../view/administracion.php");
         }
 
         break;
@@ -112,7 +112,7 @@ switch(true){
     default:
 
         echo 'no hay ni un id';
-        header("location: ../view/");
+        header("location: ../view/administracion.php");
 
 }
 

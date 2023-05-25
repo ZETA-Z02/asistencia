@@ -15,7 +15,9 @@ $login = $consulta->todosLogin();
 
 ?>
 
+
     <div class="col-md-8">
+        <h2>personal</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -69,6 +71,7 @@ $login = $consulta->todosLogin();
     </div>
 
     <div class="col-md-8">
+    <h2>cargos</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -120,6 +123,7 @@ $login = $consulta->todosLogin();
     </div>
 
     <div class="col-md-8">
+    <h2>login</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>

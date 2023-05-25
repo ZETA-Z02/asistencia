@@ -11,7 +11,9 @@ class Consulta{
         $this->conn = new Conexion();
         return $this->conn;
     }
+
     //ver el los cargos y sus datos de la fila
+    
     public function verCargos($cargo){
         $sql = "SELECT id_cargo,cargo,nivel_usuario FROM cargo WHERE cargo = '$cargo';";
         $data = $this->conn->ConsultaArray($sql);
@@ -24,7 +26,7 @@ class Consulta{
     }
     //para ver el id del personal y el id cargo que posee
     public function veridPersonal($nombre,$apellido,$dni){
-        $sql = "SELECT id_personal,id_cargo FROM personal WHERE nombre = '$nombre' AND apellido = '$apellido' AND dni = '$dni';";
+        $sql = "SELECT id_personal,id_cargo FROM personal WHERE nombre = '$nombre' AND apellido = '$apellido' AND dni = $dni;";
         $data = $this->conn->ConsultaArray($sql);
         return $data;
     }

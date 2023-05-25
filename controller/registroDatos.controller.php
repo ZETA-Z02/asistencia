@@ -16,18 +16,25 @@ if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['sexo
     $cargo = $_POST['cargo'];
 
     $verCargos=$consulta->verCargos($cargo);
-    //echo $verCargos['id_cargo'];
+    echo $verCargos['id_cargo'];
 
     if(!empty($verCargos)){
         echo 'se cumple';
         //$registrarCargo = $verCargos['id_cargo'];
+
         $consulta->RegistrarPersonal($nombre,$apellido,$sexo,$dni,$telefono,$direccion,$ciudad,$verCargos['id_cargo']);
 
-        //Obtener el ID del personal registrado
+        //Obtener el ID del personal registrado getConnection()->lastInsertId();
         //$id_personal = $consulta->getConnection()->lastInsertId();
+        
         $datos = $consulta->veridPersonal($nombre,$apellido,$dni);
+        
         //echo $datos['id_personal'];
+        
         //Redireccionar a la página "registroUsuario.php" con el ID del personal en la URL
+        
+        //echo 'funciona el envio de datos';
+        
         //header("Location: ../view/registroUsuario.php?id_personal=" . urlencode($id_personal));
         
         header("location: ../view/registroUsuario.php?idpersonal=".urlencode($datos['id_personal']));
