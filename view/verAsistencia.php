@@ -53,10 +53,11 @@ $asistencia = $consulta->mostrarAsistencia();
 
 
     <div>
-        <a href="salida.view.php">
-            <button>salir</button>
+        <a href="administracion.php">
+            <button>volver</button>
         </a>
     </div>
+    
 
 </body>
 </html>
