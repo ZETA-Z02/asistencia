@@ -1,6 +1,6 @@
 <footer>
 
-    <h1>crear el footer aqui</h1>
+<script src="../assets/script2.js"></script>
     <script src= "../assets/scrips.js"></script>
 
 </footer>
