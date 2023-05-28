@@ -1,4 +1,4 @@
-<?php require "header.php";?>
+<?php require "vista.php";?>
 <!--header -->
 
 
@@ -29,29 +29,45 @@ if($cargo['planilla']==1){
 
 <form action = "../controller/editar.php?idcargo=<?=$cargo['id_cargo']?>" id = "my-form" method = "post">
     
-    <div>
-        <span>cargo<input type="text" name="usuario" value = "<?= $cargo['cargo'];?>"></span>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="">cargo</label>
+            <div class="col-sm-8">
+                <input type="text" name="cargo" value = "<?= $cargo['cargo'];?>">
+            </div>
     </div>
-    <div>
-        <span>pago por hora<input type="text" name="pago_hora" value = "<?= $cargo['pago_hora'];?>"></span>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="">pago por hora</label>
+            <div class="col-sm-8">
+                <input type="text" name="pago_hora" value = "<?= $cargo['pago_hora'];?>">
+            </div>
     </div>
-    <div>
-        <span>planilla<input type="text" name="planilla" value = "<?= $conPlanilla;?>"></span>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="">planilla</label>
+            <div class="col-sm-8">
+                <input type="text" name="planilla" value = "<?= $conPlanilla;?>">
+            </div>
     </div>
-    <div>
-        <span>nivel de usuario<input type="text" name="nivel_usuario" value = "<?= $cargo['nivel_usuario'];?>"></span>
+    <div  class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="">nivel de usuario</label>
+            <div class="col-sm-8">
+                <input type="text" name="nivel_usuario" value = "<?= $cargo['nivel_usuario'];?>">
+            </div>
+    </div >
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="">turno</label>
+            <div class="col-sm-8">
+                <input type="text" name="turno" value = "<?= $cargo['turno'];?>">
+            </div>
     </div>
-    <div>
-        <span>turno<input type="text" name="turno" value = "<?= $cargo['turno'];?>"></span>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="">horas de trabajo</label>
+            <div class="col-sm-8">
+                <input type="text" name="horas_trabajo" value = "<?= $cargo['horas_trabajo'];?>">
+            </div>
     </div>
-    <div>
-        <span>horas de trabajo<input type="text" name="horas_trabajo" value = "<?= $cargo['horas_trabajo'];?>"></span>
-    </div>
-
-    <input type="hidden" name= "idcargo" value=<?= $idcar ?>>
-    <input type="hidden" name= "idpersonal" value=<?= $idper ?>>
 
     <button type="submit">guardar cambios</button>
+
 </form>
 
 

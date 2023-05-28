@@ -1,9 +1,9 @@
 <?php 
 session_start();
-
+//falta poner para ver las asistencias de todos
 if(isset($_SESSION['admin']))
 {
-    include("header.php") ;
+    include("vista.php") ;
     require "../model/consultas.model.php";
 
 $consulta = new Consulta();
@@ -15,7 +15,9 @@ $login = $consulta->todosLogin();
 
 ?>
 
+
     <div class="col-md-8">
+        <h2>personal</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -58,7 +60,7 @@ $login = $consulta->todosLogin();
                         </td>
                         <!--se deberia crear un login, verificar si ya tiene un login y si no tiene se deberia poder crear-->
                         <td>
-                            <a href="../controller/crearLogin.controller.php?id_personal=<?=$row['id_personal'];?>">
+                            <a href="../view/registroUsuario.php?idpersonal=<?=$row['id_personal'];?>"">
                                 crear login
                             </a>
                         </td>
@@ -69,6 +71,7 @@ $login = $consulta->todosLogin();
     </div>
 
     <div class="col-md-8">
+    <h2>cargos</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -109,7 +112,7 @@ $login = $consulta->todosLogin();
                             </a>
                         </td>
                         <td>
-                            <a href="../controllers/editar.controller.php?id=<?php echo $row['id_cargo'];?>">
+                            <a href="newCargo.php">
                                 añadir cargo
                             </a>
                         </td>
@@ -120,11 +123,13 @@ $login = $consulta->todosLogin();
     </div>
 
     <div class="col-md-8">
+    <h2>login</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th> id_login </th>
                     <th> id_personal </th>
+                    <th> id_cargo </th>
                     <th> usuario </th>
                     <th> contrasena </th>
                     <th> edit </th>
@@ -139,6 +144,7 @@ $login = $consulta->todosLogin();
                     <tr>
                         <td><?php echo $row['id_login']?> </td>
                         <td><?php echo $row['id_personal']?> </td> 
+                        <td><?php echo $row['id_cargo']?> </td> 
                         <td><?php echo $row['usuario']?> </td>
                         <td><input type="password" value = '<?php echo $row['contraseña']?>' disabled ></td>
                                                 
@@ -160,7 +166,19 @@ $login = $consulta->todosLogin();
 
 
     <div>
-        <a href="salida.view.php" type="submit">salir</a>
+        <a href="../controller/salida.controller.php">
+            <button>salir</button>
+        </a>
+    </div>
+    <div>
+        <a href="registroDatos.php">
+            <button>anadir personal</button>
+        </a>
+    </div>
+    <div>
+        <a href="verAsistencia.php">
+            <button>ver asistencia</button>
+        </a>
     </div>
         
     

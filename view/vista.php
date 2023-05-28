@@ -3,9 +3,11 @@ include ("header.php");
 ?>
 
 <body>
+
     <!-- header inicio -->
     <header class="header">
         <div class="header__container">
+        
             <img src="../video/loo1.png" class="header__img" alt="">
             <div class="header__search">
                 <input type="search" placeholder="Buscar ....." class="header__input">
@@ -28,10 +30,10 @@ include ("header.php");
                 <div class="nav__list">
                     <div class="nav__items">
                         <h1 class="nav_subtitle">Profile</h1>
-                        <a href="#" class="nav_link active">
+                        <a href="administracion.php" class="nav_link active">
                             <!-- <i class="bx bx-home nav__icon"></i> -->
                             <i class="fa-solid fa-house"></i>
-                            <span class="nav_name">Inicio</span>
+                            <span class="nav_name">Vista para ver el personal</span>
                         </a>
                         <div class="nav__dropdown">
                             <a href="#" class="nav__link">
@@ -73,14 +75,14 @@ include ("header.php");
                                 </div>
                             </div>   
                         </div>
-                        <a href="#" class="nav__link">
+                        <a href="editarCargo.php" class="nav__link">
                             <!-- <i class="bx bx-compass nav__icon"></i> -->
                             <i class="fa-solid fa-compass"></i>
                             <span class="nav__name">Explorar</span>
                         </a>
                         <a href="#" class="nav__link">
                             <!-- <i class="bx bx-analyse nav__icon"></i> -->
-                            <i class="fa-solid fa-chart-mixed"></i>
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
                             <span class="nav__name">Análisis</span>
                         </a>
                     </div>
@@ -98,6 +100,6 @@ include ("header.php");
     
     <main>
         <section>
-            <p>Menú  -  Barra Lateral</p>
+            <p>Bienvenido</p>
         </section>
     </main>

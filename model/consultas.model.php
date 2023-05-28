@@ -11,7 +11,9 @@ class Consulta{
         $this->conn = new Conexion();
         return $this->conn;
     }
+
     //ver el los cargos y sus datos de la fila
+    
     public function verCargos($cargo){
         $sql = "SELECT id_cargo,cargo,nivel_usuario FROM cargo WHERE cargo = '$cargo';";
         $data = $this->conn->ConsultaArray($sql);
@@ -24,7 +26,7 @@ class Consulta{
     }
     //para ver el id del personal y el id cargo que posee
     public function veridPersonal($nombre,$apellido,$dni){
-        $sql = "SELECT id_personal,id_cargo FROM personal WHERE nombre = '$nombre' AND apellido = '$apellido' AND dni = '$dni';";
+        $sql = "SELECT id_personal,id_cargo FROM personal WHERE nombre = '$nombre' AND apellido = '$apellido' AND dni = $dni;";
         $data = $this->conn->ConsultaArray($sql);
         return $data;
     }
@@ -66,6 +68,7 @@ class Consulta{
         $sql = "DELETE FROM login WHERE id_login  = '$idLogin';";
         $this->conn->ConsultaSin($sql);
     }
+
     //para ver un cargo en particular para editar
     public function cargoParticular($idcargo){
         $sql = "SELECT * FROM cargo WHERE id_cargo = '$idcargo';";
@@ -91,6 +94,47 @@ class Consulta{
         $data = $this->conn->ConsultaArray($sql);
         return $data;
     }
+
+    //update personal individual
+    public function updatePersonal($idpersonal,$nombre,$apellido,$sexo,$telefono,$direccion,$ciudad,$id_cargo){
+        $sql = "UPDATE personal SET nombre = '$nombre', apellido = '$apellido', sexo = '$sexo', telefono = $telefono,direccion = '$direccion', ciudad = '$ciudad', id_cargo = $id_cargo WHERE id_personal = $idpersonal;";
+        $this->conn->ConsultaSin($sql);
+    }
+    //update cargos individual
+    public function updateCargo($idcargo,$newCargo,$newPago,$newPlanilla,$newNivel,$newTurno,$newHoras){
+        $sql = "UPDATE cargo SET cargo = '$newCargo', pago_hora = '$newPago', planilla = '$newPlanilla', nivel_usuario = $newNivel,turno = '$newTurno', horas_trabajo = '$newHoras' WHERE id_cargo = $idcargo;";
+        $this->conn->ConsultaSin($sql);
+    }
+    //ver la contrasena para verificar en la db
+    public function verificarPassword($id_login){
+        $sql = "SELECT contraseña FROM login WHERE id_login = $id_login;";
+        $data = $this->conn->ConsultaArray($sql);
+        return $data;
+    }
+
+    //update login
+    public function updateLogin($id_login,$usuario,$newPassword){
+        $sql = "UPDATE login SET usuario = '$usuario', contraseña = '$newPassword' WHERE id_login = $id_login;";
+        $this->conn->ConsultaSin($sql);
+    }
+    //update login si es que actualiza el personal
+    public function updateLoginCargosPersonal($id_personal,$id_cargo){
+        $sql = "UPDATE login SET id_cargo = $id_cargo WHERE id_personal= $id_personal;";
+        $this->conn->ConsultaSin($sql);
+    }
+
+    public function mostrarAsistenciaPersonal($id_login){
+        $sql = "SELECT * FROM asistencia WHERE id_login = $id_login;";
+        $data = $this->conn->ConsultaCon($sql);
+        return $data;
+    }
+    public function mostrarAsistencia(){
+        $sql = "SELECT * FROM asistencia";
+        $data = $this->conn->ConsultaCon($sql);
+        return $data;
+    }
+
+
 
 
 

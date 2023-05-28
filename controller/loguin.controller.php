@@ -26,9 +26,6 @@ switch (true) {
         echo "Es tarde";
         $tipo = 'Entrada tarde';
         break;
-    default:
-        $tipo = 'Entrada comun';
-        echo "Hora no válida";
 }   
 
 
@@ -79,7 +76,8 @@ if(!empty($_POST['usuario']) && !empty($_POST['password'])){
                 //echo "ingresaste";
 
                 //enviar a donde pertenece el usuario segun su nivel
-                header("location: ../view/administracion.php");
+                // header("location: ../view/administracion.php");
+                header("location: ../view/vista.php");
                 break;
 
             case 2:
@@ -93,7 +91,7 @@ if(!empty($_POST['usuario']) && !empty($_POST['password'])){
                 //si es turno completo debe verificar cuantas veces ingreso
                                 
                 //enviar a donde pertenece el usuario segun su nivel
-                header("location: ../view/");
+                header("location: ../view/vistaPersonal.php");
                 break;
 
             case 3:
@@ -105,7 +103,7 @@ if(!empty($_POST['usuario']) && !empty($_POST['password'])){
                 
                 
                 //enviar a donde pertenece el usuario segun su nivel
-                header("location: ../view/");
+                header("location: ../view/vistaPersonal.php");
                 break;
 
             default:

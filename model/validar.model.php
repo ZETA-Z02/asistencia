@@ -45,6 +45,13 @@ class Validar{
         $data = $this->conn->ConsultaArray($sql);
         return $data;
     }
+
+    //insertar nuevo cargo
+    public function newCargo($cargo,$pago_hora,$planilla,$nivel_usuario,$turno,$horas_trabajo){
+        $sql = "INSERT INTO cargo VALUES(null,'$cargo','$pago_hora','$planilla','$nivel_usuario','$turno','$horas_trabajo');";
+        $this->conn->ConsultaSin($sql);
+    }
+
     
     
 

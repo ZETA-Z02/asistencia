@@ -11,7 +11,7 @@ switch(true){
     echo 'se ejecuta borrar personal';
     header("location: ../view/");
     break;
-  case (isset($_GET['id_cargo'])): 
+  case (isset($_GET['id_cargo'])):
     $id_cargo = $_GET['id_cargo'];
     $consulta->borrarCargo($id_cargo);
     echo 'se ejecuta borrar cargo';
@@ -26,8 +26,8 @@ switch(true){
   default:
 
   echo 'no hay ni un id';
-  header("location: ../view/");
+  header("location: ../view/administracion.php");
 
 } 
 
-?>    
+?>
