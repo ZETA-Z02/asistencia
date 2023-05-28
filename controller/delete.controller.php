@@ -9,19 +9,19 @@ switch(true){
     $consulta->borrarPersonal($id_personal);
     $consulta->borrarLoginconPersonal($id_personal);
     echo 'se ejecuta borrar personal';
-    header("location: ../view/");
+    header("location: ../view/administracion.php");
     break;
   case (isset($_GET['id_cargo'])):
     $id_cargo = $_GET['id_cargo'];
     $consulta->borrarCargo($id_cargo);
     echo 'se ejecuta borrar cargo';
-    header("location: ../view/");
+    header("location: ../view/administracion.php");
     break;
   case (isset($_GET['id_login'])):
     $id_login = $_GET['id_login'];
     $consulta->borrarLogin($id_login);
     echo 'se ejecuta borrar login';
-    header("location: ../view/");
+    header("location: ../view/administracion.php");
     break;
   default:
 

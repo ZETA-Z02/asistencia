@@ -28,6 +28,9 @@ if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['sexo
         //$id_personal = $consulta->getConnection()->lastInsertId();
         
         $datos = $consulta->veridPersonal($nombre,$apellido,$dni);
+
+        echo $datos['id_personal'];
+        echo $datos['id_cargo'];
         
         //echo $datos['id_personal'];
         
@@ -35,12 +38,12 @@ if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['sexo
         
         //echo 'funciona el envio de datos';
         
-        //header("Location: ../view/registroUsuario.php?id_personal=" . urlencode($id_personal));
+        //header("location: ../view/registroUsuario.php?id_personal=".urlencode($datos['id_personal']));
         
         header("location: ../view/registroUsuario.php?idpersonal=".urlencode($datos['id_personal']));
     }else{
         echo 'no se cumple y no se inserta datos';
-        header("location: registroDatos.php");
+        header("location: ../view/registroDatos.php");
     }
 
     

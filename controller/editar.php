@@ -101,7 +101,7 @@ switch(true){
 
             $consulta->updateLogin($id_login,$newUser,$newContrasena);
 
-            header("location: ");
+            header("location: ../view/administracion.php");
         }else{
             echo 'error faltan datos por llenar';
             header("location: ../view/administracion.php");

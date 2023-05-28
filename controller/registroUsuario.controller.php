@@ -25,6 +25,7 @@ if(!empty($_POST['usuario']) && !empty($_POST['contraseña']) && ($_POST['contra
     header("location: ../");
 }else{
     echo 'error';
+    header("location: ../view/registroUsuario.php");
 }
 
 

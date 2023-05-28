@@ -117,13 +117,13 @@ if(!empty($_POST['usuario']) && !empty($_POST['password'])){
         $_SESSION['mensaje'] = 'cuenta no encontrada, registrese';
         //echo "error al verificar contrasenas";
         //$_SESSION['mensaje'] = 'credenciales incorrectas: intenta de nuevo';
-        header('location: ../view/login.view.php');
+        header('location: ../view/login.php');
     }
 
 }else{
     echo "no entraste";
     $_SESSION['mensaje'] = "uno o varios campos esta vacio";
-    header('location: ../view/login.view.php');
+    header('location: ../view/login.php');
 }
 
 ?>

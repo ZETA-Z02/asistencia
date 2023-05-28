@@ -25,6 +25,7 @@ if(!empty($_POST['cargo']) && !empty($_POST['pago_hora']) && !empty($_POST['plan
     
     header("location: ../view/administracion.php");
 }else{
+    header("location: ../view/administracion.php");
     echo 'error';
 }
 
