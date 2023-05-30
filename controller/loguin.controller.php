@@ -70,13 +70,17 @@ if(!empty($_POST['usuario']) && !empty($_POST['password'])){
                 $_SESSION['privilegio'] = $validarUsuario['nivel_usuario'];
                 $_SESSION['id_login'] = $validarUsuario['id_login'];
 
-                         
-                //echo $_SESSION['id'];
+                //echo $_SESSION['inicio'];       
+                //echo $_SESSION['admin'];
                 //echo $_SESSION['privilegio'];
+                //echo $_SESSION['id)login'];
                 //echo "ingresaste";
+
+                
 
                 //enviar a donde pertenece el usuario segun su nivel
                 // header("location: ../view/administracion.php");
+                
                 header("location: ../view/vista.php");
                 break;
 

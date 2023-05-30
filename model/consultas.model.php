@@ -87,7 +87,6 @@ class Consulta{
         $data = $this->conn->ConsultaArray($sql);
         return $data;
     }
-
     //
     public function consultaHora($id_login){
         $sql = "SELECT COUNT(*) as 'total' from asistencia WHERE id_login='$id_login' ";
@@ -133,21 +132,15 @@ class Consulta{
         $data = $this->conn->ConsultaCon($sql);
         return $data;
     }
-
-
-
-
-
+    public function verAsistenciaDia($fecha){
+        $sql = "SELECT DISTINCT id_login FROM asistencia WHERE fecha = '$fecha';";
+        $data = $this->conn->ConsultaCon($sql);
+        return $data;
+    }
+    public function faltaGlobal($idlogin,$tipo,$fecha){
+        $sql = "INSERT INTO asistencia VALUES(null,$idlogin,'$tipo',null,'$fecha',null,null);"; 
+        $this->conn->consultaSin($sql);
+    }
 }
-
-
-
-
-
-
-
-
-
-
 
 ?>

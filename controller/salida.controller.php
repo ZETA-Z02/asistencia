@@ -6,7 +6,17 @@ if(isset($_SESSION['admin']))
 
     $conexion = new Conexion();
 
-    $tiempo = $_SESSION['inicio']; # arreglar
+    $tiempoEntrada = $_SESSION['inicio'];
+    $tiempoSalida = time(); 
+    $tiempoUso = ($tiempoSalida - $tiempoEntrada)/60;
+
+    //$horas = floor($tiempoUso / 3600);
+    //$minutos = floor(($tiempoUso % 3600) / 60);
+    //$segundos = $tiempoUso % 60;
+    //echo $horas;
+    //echo "Tiempo de uso: " . $horas . " horas, " . $minutos . " minutos, " . $segundos . " segundos.";
+
+    # arreglar
 
     $fecha    = date("Y-m-d");  
     $hora     = date("H:i:s");
@@ -18,7 +28,7 @@ if(isset($_SESSION['admin']))
     
     $ultimo = $ultimo_codigo['id_asistencia'];
 
-    $sql="UPDATE asistencia SET horasalida = '$hora', tiempo_uso = '$tiempo' WHERE id_asistencia = $ultimo;"; 
+    $sql="UPDATE asistencia SET horasalida = '$hora', tiempo_uso = '$tiempoUso' WHERE id_asistencia = $ultimo;"; 
     $response = $conexion->ConsultaSin($sql);
 
     session_destroy();
@@ -26,8 +36,8 @@ if(isset($_SESSION['admin']))
     if($response)
     {
         #echo "Termino la session";
-        session_destroy();
         header("Location: ../view/login.php");
+        exit();
     }else{
         echo "Sigues activo";
     }

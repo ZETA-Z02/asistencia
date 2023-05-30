@@ -165,19 +165,20 @@ $login = $consulta->todosLogin();
     </div>
 
 
-    <div>
-        <a href="../controller/salida.controller.php">
-            <button>salir</button>
-        </a>
-    </div>
+
     <div>
         <a href="registroDatos.php">
             <button>anadir personal</button>
         </a>
-    </div>
+    </div><br>
     <div>
         <a href="verAsistencia.php">
             <button>ver asistencia</button>
+        </a>
+    </div>
+    <div><br>
+        <a href="../controller/salida.controller.php"> 
+            <button>salir</button>
         </a>
     </div>
         
