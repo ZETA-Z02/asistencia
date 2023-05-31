@@ -52,6 +52,12 @@ class Validar{
         $this->conn->ConsultaSin($sql);
     }
 
+    //actualizar falta para los de turno tarde en vez de consultar quien es de que turno a cada rato
+    public function updateFaltaVespertino($id_login,$tipo,$hora,$fecha){
+        $sql = "UPDATE asistencia SET tipo = '$tipo', hora = '$hora' WHERE id_login = '$id_login' AND fecha = '$fecha' AND tipo = 'FALTA';";
+        $this->conn->ConsultaSin($sql);
+    }
+
     
     
 

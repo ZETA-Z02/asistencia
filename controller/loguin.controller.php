@@ -50,7 +50,7 @@ if(!empty($_POST['usuario']) && !empty($_POST['password'])){
             echo $tipo;
             echo 'cargo completo';
             $validar->marcarAsistencia($validarUsuario['id_login'],$tipo,$hora,$fecha); 
-        }else if($cargo == 'medio' and ($hora >= '07:00:00' && $hora < '07:30:00') or ($hora >= '13:00:00' && $hora < '13:30:00')){
+        }else if($cargo == 'parcial matutino' and ($hora >= '07:00:00' && $hora < '07:30:00')){
             $unicaEntrada = ' unica';
             $tipo = $tipo.$unicaEntrada;
             echo $tipo;
@@ -59,6 +59,17 @@ if(!empty($_POST['usuario']) && !empty($_POST['password'])){
         }else{
             echo 'cargo medio entrada';
             $validar->marcarAsistencia($validarUsuario['id_login'],$tipo,$hora,$fecha);
+        }
+
+        //actualizar las faltas para el turno vespertino en vez de consultar quien es de que turno
+        if($cargo == 'parcial vespertino' and ($hora >= '13:00:00' && $hora < '13:30:00')){
+            $unicaEntrada = ' unica';
+            $tipo = $tipo.$unicaEntrada;
+            //aqui consulta para actualizar la falta
+            $validar->updateFaltaVespertino($validarUsuario['id_login'],$tipo,$hora,$fecha);
+        }else{
+            //la misma consulta para actualizar pero actualizara para tardanza
+            $validar->updateFaltaVespertino($validarUsuario['id_login'],$tipo,$hora,$fecha);
         }
         
         //switch para ver nivel de usuario y cada uno a donde se ira

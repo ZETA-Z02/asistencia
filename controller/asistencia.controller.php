@@ -1,5 +1,6 @@
 <?php
-require ("../model/consultas.model.php");
+require(__DIR__ . '/../model/consultas.model.php');
+
 //marca automaticamente falta a todos, con-> crontab 1 8,14 * * /var/www/html/asistencia/controller/asistencia.controller.php
 $consulta = new Consulta();
 
@@ -28,4 +29,5 @@ foreach ($todosLogin as $loginRegistrado){
         $consulta->faltaGlobal($loginRegistrado['id_login'],$tipo,$fecha);
     }
 }
+
 ?>
