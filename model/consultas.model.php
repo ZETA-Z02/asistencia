@@ -13,7 +13,7 @@ class Consulta{
     }
 
     //ver el los cargos y sus datos de la fila
-    public function verCargos($cargo){
+     public function verCargos($cargo){
         $sql = "SELECT id_cargo,cargo,nivel_usuario FROM cargo WHERE cargo = '$cargo';";
         $data = $this->conn->ConsultaArray($sql);
         return $data;

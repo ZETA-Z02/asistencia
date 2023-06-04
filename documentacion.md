@@ -12,15 +12,12 @@
 - ciudad ----VARCAHR(30)
 - id_cargo *(FK)*
 
-
 ### E. Login
 - id_login *(PK)*  --- INT AUTO INCREMENT
 - id_personal  *(FK)* --- INT
 - id_cargo *(FK)* ---INT
 - usuario   ---VARCHAR(20)
 - contraseña ---VARCAHR(20)
-
-
 
 ### E. cargo
 - id_cargo *(PK)* ---INT AUTO INCREMENT
@@ -78,8 +75,6 @@
 5. Personal(id_personal) a Boleta.(id_personal)-->La entidad Boleta tiene una relación muchos-a-uno con la entidad Personal, ya que muchas boletas pueden pertenecer a un solo empleado. La clave foránea id_personal en la tabla Boleta establece esta relación.
 6. Cargo(id_cargo) a Boleta(id_cargo)-->La entidad Boleta tiene una relación muchos-a-uno con la entidad Cargo, ya que muchas boletas pueden pertenecer a un solo cargo. La clave foránea id_cargo en la tabla Boleta establece esta relación.
 7. Ausencia(id_ausencia) a Boleta(id_ausencia)-->La entidad Boleta tiene una relacion muchos a uno con la entidad Ausencia, ya que muchas boletas pueden pertecener a una sola Ausencia.  La clave foránea id_ausencia en la tabla Boleta establece esta relación.
-
-
 
 
 ## REGLAS DE NEGOCIO

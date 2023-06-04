@@ -18,7 +18,7 @@ $login = $consulta->todosLogin();
 
     <div class="col-md-8">
         <h2>personal</h2>
-        <table class="table table-bordered">
+        <table class="table table-success table-striped">
             <thead>
                 <tr>
                     <th> nombre </th>

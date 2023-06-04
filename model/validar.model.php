@@ -58,13 +58,6 @@ class Validar{
         $this->conn->ConsultaSin($sql);
     }
 
-    
-    
-
-    
-
-
-
 }
 
 ?>

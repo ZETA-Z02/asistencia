@@ -9,7 +9,7 @@ $validar = new Validar();
 $idpersonal = $validar->idPersonal($idpersonal);
 
 $idper = $idpersonal['id_personal'];
-$idcar = $idpersonal['id_cargo'];
+$idcar = $idpersonal['id_cargo'];   
 
 ?>
 
